@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algoritm</title>
+</head>
+<body>
+<script>
+var dominantIndex = function(nums) {
+  var index = -1;  
+    if (nums.length > 1){
+      var prevMax = -1;
+      var currentMax = -1;
+      for (var i = 0; i < nums.length; i++){
+        if (nums[i]>nums[currentMax] || currentMax === -1){
+          prevMax = currentMax;
+          currentMax = i;
+        } else if (prevMax === -1 || (nums[i]>nums[prevMax] && nums[i]<nums[currentMax])){
+          prevMax = i;
+        }
+       
+      }
+
+      if (nums[currentMax]/nums[prevMax] >= 2){
+        index = currentMax;
+      } 
+    } else if (nums.length === 1){
+      index = 0;
+    }
+    return index;
+};
+
+dominantIndex([1, 2, 3, 4]);
+</script>
+</body>
+</html>
