@@ -1,0 +1,37 @@
+fibonacci
+
+1.
+recurcia
+//overtime while a lot of numbers
+
+function fib(n){
+	if(n===0 || n===1){
+		return n;
+	} else {
+	 return fib(n-1) + fib(n-2)
+	}
+}
+
+2. cash
+var cash = [0, 1];
+function fib(n){
+	if(n===0 || n===1){
+		return cash[n];
+	} else if (!cash[n]){
+	 cash[n] = fib(n-1) + fib(n-2);
+	}
+	return cash[n];
+}
+
+3.Dynamic programming
+function fib(n){
+	var prev = 1;
+	var cur = 1;
+	var answ = 0;
+	for (var i = 3; i <=n; i++){
+		answ = prev + cur;
+		prev = cur;
+		cur = answ;
+	}
+	return answ;
+}
