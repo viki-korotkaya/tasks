@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algoritm</title>
+</head>
+<body>
+<script>
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+  gain(digits.length-1);
+  function gain(index){
+    if (digits[index] !== 9){
+      digits[index] += 1;
+    } else {
+      if (digits[index-1] === undefined){
+        digits[index] = 0;
+        digits.unshift(1);
+      } else {
+        digits[index] = 0;
+        gain(index-1);
+      }
+    }
+      
+      
+  }
+  return digits;
+};
+
+
+plusOne([1, 2, 3]);
+plusOne([1, 2, 9]);
+plusOne([9, 9]);
+</script>
+</body>
+</html>
