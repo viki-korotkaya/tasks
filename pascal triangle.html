@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algoritm</title>
+</head>
+<body>
+<script>
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+var generate = function(numRows) {
+  var pascalTriangle = [];
+    for (var i = 1; i <= numRows; i++){
+      pascalTriangle.push([1]);
+      if (pascalTriangle[i-1].length !== i){
+        for (let j = 1; j < i; j++){
+          if (!pascalTriangle[i-2][j]){
+            pascalTriangle[i-1].push(1);
+          } else {
+            let sum = pascalTriangle[i-2][j-1] + pascalTriangle[i-2][j]
+            pascalTriangle[i-1].push(sum);
+          }
+          
+        }
+      }
+
+    }
+    return pascalTriangle;
+
+
+};
+
+
+generate(6);
+generate(7);
+
+
+
+</script>
+</body>
+</html>
