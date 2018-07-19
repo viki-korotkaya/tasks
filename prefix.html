@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algoritm</title>
+</head>
+<body>
+<script>
+
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+
+    var prefix = '';
+    if (strs.length > 0){
+      var testWord = strs[0];
+    for (var i = 0; i < testWord.length; i++){
+      
+      var findingPrefix = prefix + testWord.charAt(i);
+      for (var j = 0; j < strs.length; j++) {
+        if(strs[j].indexOf(findingPrefix) !== 0){
+          return prefix;
+        }
+      }
+      prefix = prefix + testWord.charAt(i);
+
+    }
+    }
+    
+    return prefix;
+};
+
+longestCommonPrefix(["flower","flow","flight"]);
+</script>
+</body>
+</html>
