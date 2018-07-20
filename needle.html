@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algoritm</title>
+</head>
+<body>
+<script>
+
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+    var res = -1;
+    if (needle.length === 0){
+    	return res = 0;
+    }
+    for (var i = 0; i < haystack.length; i++){
+    	if (haystack.substr(i, needle.length) === needle){
+    		return res = i;
+    	}
+    }
+    return res;
+
+
+
+
+    // for (var i = 0; i < haystack.length; i++){
+    // 	if (haystack.charAt(i) === needle.charAt(ind)){
+    // 		j = i;
+    // 		var c = 1;
+    // 		if (c === needle.length){
+    // 			return j
+    // 		}
+    // 		ind += 1;
+    // 		for (var b = i + 1; b < haystack.length; b++){
+    // 			if (haystack.charAt(b) === needle.charAt(ind)){
+    // 				c += 1;
+    // 				if (c === needle.length){
+    // 					return j
+    // 				}
+    // 				ind ++;
+    // 			} else {
+    // 				ind = 0;
+    // 				j = -1;
+    // 			}
+    // 		}
+    		
+    // 	}
+    // }
+    // return j;
+};
+strStr("aaaaa", "");
+</script>
+</body>
+</html>
