@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algoritm</title>
+</head>
+<body>
+<script>
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMaxConsecutiveOnes = function(nums) {
+    var sum = 0;
+    var currentSum = 0;
+    for (var i = 0; i < nums.length; i++){
+        if (nums[i] === 1){
+            currentSum ++;
+            
+        } else {
+            if (currentSum > sum){
+                sum = currentSum;
+            }
+            currentSum = 0;
+        }
+        
+    }
+    
+    return sum;
+};
+
+findMaxConsecutiveOnes([1,1]);
+</script>
+</body>
+</html>

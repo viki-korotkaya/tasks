@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algoritm</title>
+</head>
+<body>
+<script>
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseString = function(s) {
+    
+    var i = 0;
+    var j = s.length-1;
+    var reverseStr = s.split('');
+    while(i<j){
+        swap(reverseStr, i, j);  // this is a self-defined function
+        i++;
+        j--;
+    }
+    function swap(str, ind1, ind2){
+        var leftChar = reverseStr[ind2]
+        var rightChar = reverseStr[ind1]
+        reverseStr[ind1] = leftChar;
+        reverseStr[ind2] = rightChar;
+    }
+
+    return s = reverseStr.join('');
+
+};
+
+reverseString("hello");
+</script>
+</body>
+</html>

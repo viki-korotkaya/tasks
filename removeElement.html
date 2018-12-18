@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algoritm</title>
+</head>
+<body>
+<script>
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function(nums, val) {
+    var i = 0;
+    var j = nums.length - 1;
+    var length = nums.length;
+    while(i <= j){
+        if (nums[i] === val && nums[j] !== val ){
+            nums[i] = nums[j];
+            nums[j] = val;
+            length--;
+            i++;
+            j--;
+
+        } else if (nums[i] === val && nums[j] === val ){
+            length--;
+            j--;
+        } else {
+            i++;
+        }
+    }
+    return length;
+};
+
+removeElement([1], 1)
+</script>
+</body>
+</html>
