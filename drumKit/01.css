@@ -1,0 +1,38 @@
+body {
+	background-image: url('download.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.wrapper {
+	width: 70%;
+	margin: 10% auto;
+}
+
+.drum {
+	width: 40px;
+	margin: 15px;
+	padding: 10px;
+	float: left;
+	border: 3px solid black;
+	border-radius: 10px;
+	text-align: center;
+	transition: all 0.07s;
+}
+
+.drum > kbd {
+	color: white;
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.drum > span {
+	color: yellow;
+	font-size: 12px;
+}
+
+.playing {
+	border-color: yellow;
+	transform: scale(1.1);
+	box-shadow: 0 0 10px yellow;
+}
