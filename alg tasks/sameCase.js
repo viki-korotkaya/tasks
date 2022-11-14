@@ -6,4 +6,9 @@ const sameCase = (a,b) => {
         return 1;
     }
     return 0;
+    //shorter
+    if (/[A-Z]/i.test(a) && /[A-Z]/i.test(b)){
+        if (/[A-Z]/.test(a) === /[A-Z]/i.test(b)) return 1;
+        return 0;
+    }
 }
