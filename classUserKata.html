@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <title>Kata</title>
+</head>
+<body>
+    <script>
+        class User {
+		  constructor(){
+		    this.rank = -8;
+		    this.progress = 0;
+		  }
+		  
+		  rankUpdate(){
+		    while(this.progress >= 100){
+		      if (this.progress >= 100 && this.rank < 8){
+		        this.rank = this.rank === -1 ? this.rank+2 : this.rank+1;
+		        this.progress = (this.rank === 8)? 0 : this.progress - 100;
+		      }
+		    }
+		    if (this.rank === 8) this.progress = 0;
+		  }
+		  
+		  incProgress(taskProgress){
+		    let coefficientForRank = this.rank < 0 ? this.rank + 8 : this.rank + 7;
+		    let coefficientForTask = taskProgress < 0 ? taskProgress + 8 : taskProgress + 7;
+		    if (coefficientForRank === coefficientForTask){
+		      this.progress = this.progress + 3;
+		    } else if (coefficientForRank > coefficientForTask && coefficientForRank - coefficientForTask === 1){
+		      this.progress = this.progress + 1;
+		    } else if (coefficientForRank < coefficientForTask){
+		      const diff = coefficientForTask - coefficientForRank;
+		      this.progress = 10 * diff * diff + this.progress;
+		    }
+		    this.rankUpdate();
+		  }
+		}
+
+		let user = new User();
+		user.incProgress(1); //taskProgress 1, rank -2, progress 40
+		user.incProgress(1); //taskProgress 1, rank -2, progress 80
+		user.incProgress(1);//taskProgress 1, rank -1, progress 20
+		user.incProgress(1); //taskProgress 1, rank -1, progress 30
+		user.incProgress(1); //taskProgress 1, rank -1, progress 40
+		user.incProgress(2); //taskProgress 2, rank -1, progress 80
+		user.incProgress(2); ////taskProgress 2, rank 1, progress 20
+    </script>
+</body>
+</html>
