@@ -1,0 +1,5 @@
+//move all zero elements to the end of array, saving the initial order of other elements
+function moveZeros(arr) {
+	return arr.filter((el) => el !== 0).concat(arr.filter((el) => el === 0));
+}
+moveZeros([1,2,0,1,0,1,0,3,0,1])
