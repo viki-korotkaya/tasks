@@ -3,3 +3,12 @@ function moveZeros(arr) {
 	return arr.filter((el) => el !== 0).concat(arr.filter((el) => el === 0));
 }
 moveZeros([1,2,0,1,0,1,0,3,0,1])
+
+//Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+function pigIt(str){
+    return str
+            .split(' ')
+            .map(el => /^[A-Za-z]+$/.test(el) ? `${el.slice(1)}${el[0]}ay` : el)
+            .join(' ')
+  }
+  pigIt('Hello world !');     // elloHay orldway !
